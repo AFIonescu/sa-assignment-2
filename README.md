@@ -28,7 +28,7 @@ Encapsulated order operations:
 
 ## Tech Stack
 
-- Java 21
+- Java 17
 - Spring Boot 3.2.1
 - Spring Data JPA
 - H2 Database (In-memory)
@@ -38,7 +38,7 @@ Encapsulated order operations:
 
 ## Prerequisites
 
-- Java 21
+- Java 17
 - Maven 3.6+
 
 ## Build & Run

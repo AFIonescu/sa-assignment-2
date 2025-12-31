@@ -1,9 +1,9 @@
 @echo off
-REM Set Java 21 for this project only
-set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot
+REM Set Java 17 for this project only
+set JAVA_HOME=C:\Program Files\Amazon Corretto\jdk17.0.17_10
 set PATH=%JAVA_HOME%\bin;%PATH%
 
-echo Using Java 21 for this project:
+echo Using Java 17 for this project:
 java -version
 echo.
 
