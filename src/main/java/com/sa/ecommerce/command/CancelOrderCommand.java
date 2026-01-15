@@ -39,7 +39,7 @@ public class CancelOrderCommand implements OrderCommand {
             order.setStatus(OrderStatus.CANCELLED);
             log.info("CancelOrderCommand: Order {} cancelled successfully", order.getId());
 
-            // TODO: Save cancelled order to database
+            // Save cancelled order to database
             orderRepository.save(order);
 
             // Notify observers

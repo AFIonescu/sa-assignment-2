@@ -34,7 +34,7 @@ public class PlaceOrderCommand implements OrderCommand {
             if (!validationChain.handle(order)) {
                 order.setStatus(OrderStatus.FAILED);
                 log.error("PlaceOrderCommand: Order validation failed");
-                // TODO: Save failed order to database
+                // Save failed order to database
                 orderRepository.save(order);
                 notificationService.notifyObservers(order);
                 return false;
@@ -52,7 +52,7 @@ public class PlaceOrderCommand implements OrderCommand {
             if (!paymentStrategy.processPayment(order)) {
                 order.setStatus(OrderStatus.FAILED);
                 log.error("PlaceOrderCommand: Payment processing failed");
-                // TODO: Save failed order to database
+                // Save failed order to database
                 orderRepository.save(order);
                 notificationService.notifyObservers(order);
                 return false;
@@ -62,7 +62,7 @@ public class PlaceOrderCommand implements OrderCommand {
             order.setStatus(OrderStatus.CONFIRMED);
             log.info("PlaceOrderCommand: Order confirmed successfully - ID: {}", order.getId());
 
-            // TODO: Save confirmed order to database
+            // Save confirmed order to database
             orderRepository.save(order);
 
             // Step 4: Notify observers using Observer Pattern
