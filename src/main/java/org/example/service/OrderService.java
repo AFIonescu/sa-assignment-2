@@ -41,6 +41,23 @@ public class OrderService {
         notificationService.addObserver(smsNotification);
 
         log.info("OrderService: Initialization complete");
+
+        // Create sample orders for demonstration
+        log.info("OrderService: Creating sample orders");
+        createSampleOrders();
+    }
+
+    private void createSampleOrders() {
+        Order order1 = new Order(null, "Alice Johnson", "PENDING", 299.99);
+        placeOrder(order1);
+
+        Order order2 = new Order(null, "Bob Smith", "PENDING", 149.50);
+        placeOrder(order2);
+
+        Order order3 = new Order(null, "Carol Williams", "PENDING", 599.00);
+        placeOrder(order3);
+
+        log.info("OrderService: Sample orders created successfully");
     }
 
     public Order placeOrder(Order order) {
